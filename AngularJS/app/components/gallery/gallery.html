@@ -1,8 +1,4 @@
-
-
-
-
-<div class="content-main gallery_main" ng-controller="MasonryCtrl">
+<div class="content-main gallery_main">
     <div class="gallery-main-inner">        
         <div class="col-md-12 gallery_title_main">
             <div class="gallery_title">
@@ -10,13 +6,14 @@
                 <h4>RESPONSIVE DESIGN</h4>
             </div>
         </div>
-        <div masonry>
-            <div id="content" class="gallery-images-container">
-                <div class="masonry-brick" ng-repeat="brick in bricks" ng-click="openSlide($index)">
-                    <img ng-src="{{brick.src}}">
+        <div id="content" class="gallery-images-container">
+            <div class="grid" masonry>
+                <div class="grid-sizer"></div>
+                <div class="masonry-brick grid-item" ng-repeat="slide in slides" ng-click="openSlide($index)">
+                    <img ng-src="{{slide.thumb}}">
                 </div>
-            </div>
-        </div>               
+            </div>    
+        </div>              
         <div class="gallery-item-opened" ng-show="viewSlide" ng-click="closeSlide()">
             <div class="gallery-img-holder">
                 <div class="gallery-inner">
@@ -35,28 +32,4 @@
         </div>        
     </div>
 </div>
-<script src="bower_components/angular-masonry/node_modules/jquery-bridget/node_modules/jquery/dist/jquery.js"></script>
-<script src="bower_components/angular-masonry/node_modules/jquery-bridget/jquery-bridget.js"></script>
-<script src="bower_components/angular-masonry/node_modules/masonry-layout/node_modules/outlayer/node_modules/ev-emitter/ev-emitter.js"></script>
-<script src="bower_components/angular-masonry/node_modules/masonry-layout/node_modules/outlayer/node_modules/fizzy-ui-utils/node_modules/desandro-matches-selector/matches-selector.js"></script>
-<script src="bower_components/angular-masonry/node_modules/masonry-layout/node_modules/outlayer/node_modules/fizzy-ui-utils/utils.js"></script>
-<script src="bower_components/angular-masonry/node_modules/masonry-layout/node_modules/get-size/get-size.js"></script>
-<script src="bower_components/angular-masonry/node_modules/masonry-layout/node_modules/outlayer/item.js"></script>
-<script src="bower_components/angular-masonry/node_modules/masonry-layout/node_modules/outlayer/outlayer.js"></script>
-<script src="bower_components/angular-masonry/node_modules/masonry-layout/masonry.js"></script>
-<script src="bower_components/angular-masonry/node_modules/imagesloaded/imagesloaded.js"></script>
-<script src="bower_components/angular-masonry/angular-masonry.js"></script>
-<script>
-    var MasonryCtrl = function($scope) {
-  $scope.bricks = [
-      {src: 'app/layout/images/gallery-item-1.jpg'},
-      {src: 'app/layout/images/gallery-item-4.jpg'},
-      {src: 'app/layout/images/gallery-item-6.jpg'},
-      {src: 'app/layout/images/gallery-item-2.jpg'},
-      {src: 'app/layout/images/gallery-item-5.jpg'},  
-      {src: 'app/layout/images/gallery-item-7.jpg'},
-      {src: 'app/layout/images/gallery-item-8.jpg'},
-      {src: 'app/layout/images/gallery-item-3.jpg'}
-  ];
-};
-</script>
+
