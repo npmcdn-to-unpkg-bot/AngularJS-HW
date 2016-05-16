@@ -1,15 +1,12 @@
 var GalleryCtrl = function($scope, $rootScope) {
 	$rootScope.title = 'Gallery';
-	/*$rootScope.bricks = [
-		{src: 'app/layout/images/gallery-item-1.jpg'},
-		{src: 'app/layout/images/gallery-item-4.jpg'},
-		{src: 'app/layout/images/gallery-item-6.jpg'},
-		{src: 'app/layout/images/gallery-item-2.jpg'},
-		{src: 'app/layout/images/gallery-item-5.jpg'},	
-		{src: 'app/layout/images/gallery-item-7.jpg'},
-		{src: 'app/layout/images/gallery-item-8.jpg'},
-		{src: 'app/layout/images/gallery-item-3.jpg'}
-	];*/
+	
+	var msnry = new Masonry('.grid', {
+		columnWidth: '.grid-sizer',
+		itemSelector: '.grid-item',
+		percentPosition: true
+	});
+
 	$scope.slides = [
 		{thumb: 'app/layout/images/gallery-item-1.jpg', img: 'app/layout/images/gallery-item-1-big.jpg'},
 		{thumb: 'app/layout/images/gallery-item-4.jpg', img: 'app/layout/images/gallery-item-4-big.jpg'},
