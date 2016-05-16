@@ -8,12 +8,12 @@
         </div>
         <div id="content" class="gallery-images-container">
             <div class="grid" masonry>
+                <div class="grid-sizer"></div>
                 <div class="masonry-brick grid-item" ng-repeat="slide in slides" ng-click="openSlide($index)">
                     <img ng-src="{{slide.thumb}}">
                 </div>
             </div>    
-        </div>
-        </div>               
+        </div>              
         <div class="gallery-item-opened" ng-show="viewSlide" ng-click="closeSlide()">
             <div class="gallery-img-holder">
                 <div class="gallery-inner">
